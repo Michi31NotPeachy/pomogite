@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>я болела за тигров</title>
+    <link type="image/x-icon" href="img/logo.png" rel="shortcut icon">
+    <link rel="stylesheet" href="style-1.css">
+    <script type="text/javascript" src="app.js" defer=""></script>
+
+</head>
+<body>
+
+  <a href="site.html" title="На главную">
+    <div class="header">
+      <div class="logo">
+          <img src="img/logo.png"></a> 
+  </div>
+
+  <h1 class="text_exc">Форт Боярд</h1>
+</div>
+
+<div class="slider-container">
+    <img src="img/left1.png" alt="Левое изображение" class="side-image">
+
+    <div class="slider">
+        <div class="slides">
+            <div class="slide"><img src="img/10.jpg" alt="Картинка 1"></div>
+            <div class="slide"><img src="img/sl21.jpg" alt="Картинка 2"></div>
+            <div class="slide"><img src="img/sl23.jpg" alt="Картинка 3"></div>
+            <div class="slide"><img src="img/sl24.jpg" alt="Картинка 4"></div>
+        </div>
+        <div class="buttons">
+            <button class="button" onclick="prevSlide()">&#10094;</button>
+            <button class="button" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </div>
+
+    <img src="img/right1.png" alt="Правое изображение" class="side-image">
+</div>
+      <section id="section1">
+
+        <div class="text_o_nas">
+          <p>Цель участников – выйти из запертого пространства, попутно решая различные загадки и ребусы. Игрокам команды предстоит разыскать ключи, добыть подсказки, решать головоломки, а также проходить испытания на логику, поиск и командную работу, а в конце – услышать звон падающих золотых монет. Но прежде необходимо заработать заветные секунды на сбор монет в сокровищнице, состязаясь с мастером теней в его игры. Чтобы одержать победу, необходимо будет проявить смекалку, азарт, а также показать, что такое работа настоящей команды!</p>
+
+          <div class="gallery">
+              <div class="item">
+                  <img src="img/6-1.jpg" onclick="openFullscreenImage(this)" class="expic">
+                  <div class="caption">от 2-8 игроков</div>
+              </div>
+              <div class="item">
+                  <img src="img/1-2.jpg" onclick="openFullscreenImage(this)" class="expic">
+                  <div class="caption">от 5900р. за чел</div>
+              </div>
+              <div class="item">
+                  <img src="img/6-3.png" onclick="openFullscreenImage(this)" class="expic">
+                  <div class="caption">12+</div>
+              </div>
+          </div>
+        </div>
+
+      </section>
+      <div id="fullscreen-container" class="hidden">
+        <span class="close-button" onclick="closeFullscreenImage()">&times;</span>
+        <img src="" alt="Полноэкранное изображение" id="fullscreen-image">
+      </div>
+
+      </section>
+
+      <section id="section3">
+
+      <form class="obratnuj-zvonok" autocomplete="off" /*action='email.php'*/ method='post'>
+          <div class="form-zvonok">
+
+            <div>
+              <label>Имя <span>*</span></label>
+              <input type='text' name='name' required></div>
+            <div>
+              <label>Номер телефона (с кодом) <span>*</span></label>
+              <input type='text' name='phone' required></div>
+            <div>
+              <label>Сообщение</label>
+              <input type='text' name='message'>
+            </div>
+
+            <div>
+              <label>Введите текст с картинки<span>*</span></label>
+              <input type='text' name='capcha' required>
+            </div>
+            <img src="img/capcha.jpg" class="pic">
+            <input class="bot-send-mail" type='submit' value='Послать заявку'>
+          </div>
+      </form>
+
+      </section>
+
+      <button id="scrollToTopButton">Вверх</button>
+
+
+  </body>
+
+  <footer style="width: 100%;">
+
+    <div class="social-icons">
+      <a href="https://web.telegram.org/" class="social-icon"><img src="img/tg.jpg" alt="Tg"></a>
+      <a href="https://m.vk.com/" class="social-icon"><img src="img/vk.jpg" alt="Vk"></a>
+      <a href="https://www.instagram.com/" class="social-icon"><img src="img/ig.jpg" alt="Ig"></a>
+    </div>
+
+  </footer>
+  <script>
+    console.log("Hello, World!");
+      let currentIndex = 0;
+      const slides = document.querySelector('.slides');
+      const totalSlides = document.querySelectorAll('.slide').length;
+
+      function showSlide(index) {
+          const slidesContainer = document.querySelector('.slides');
+          currentIndex = (index + totalSlides) % totalSlides;
+          slides.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        showSlide(currentIndex);
+      }
+      setInterval(nextSlide, 4000); // меняем слайд каждые 3 секунды
+  </script>
+
+  </html>

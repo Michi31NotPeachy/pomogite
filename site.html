@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заметил? Молодец</title>
+    <link type="image/x-icon" href="img/logo.png" rel="shortcut icon">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="app.js" defer=""></script>
+
+</head>
+<body>
+
+  <header>
+
+    <div class="logo">
+        <img src="img/logo.png">
+    </div>
+
+    <h1 class="site-title">Квест комнаты</h1>
+
+    <nav>
+        <ul>
+            <li><a href="#section1">О нас</a></li>
+            <li><a href="#section2">Квесты</a></li>
+            <li><a href="#section3">Бронь</a></li>
+        </ul>
+    </nav>
+
+  </header>
+
+  <div class="slider-container">
+    <img src="img/left.jpg" alt="Левое изображение" class="side-image">
+
+    <div class="slider">
+        <div class="slides">
+            <div class="slide"><img src="img/12.jpg" alt="Картинка 1"></div>
+            <div class="slide"><img src="img/11.jpg" alt="Картинка 2"></div>
+            <div class="slide"><img src="img/7.png" alt="Картинка 3"></div>
+            <div class="slide"><img src="img/13.jpg" alt="Картинка 4"></div>
+        </div>
+        <div class="buttons">
+            <button class="button" onclick="prevSlide()">&#10094;</button>
+            <button class="button" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </div>
+
+    <img src="img/right.jpg" alt="Правое изображение" class="side-image">
+</div>
+
+    <section id="section1">
+
+      <div class="text_o_nas">
+        <h1>О нас</h1>
+        <p>Квесты в Санкт-Петербурге — отличная возможность для отдыха с семьёй и друзьями.
+        </p>
+        <p>Самое время выбраться из комнаты! Квесты в реальности — одно из самых популярных развлечений.
+        </p>
+        <p>Воспользуйтесь нашей системой подбора квестов и найдите информацию о лучших квест-комнатах от разных компаний!
+        </p>
+      </div>
+
+    </section>
+
+
+    <section id="section2">
+      <div class="text_exc">
+      <h1>Квесты</h1>
+      </div>
+      <div class="column-container">
+        <div class="column">
+            <a href="page2.html" title="Узнать больше">
+            <h2>Проклятие Аннабель</h2>
+            <img src="img/5.jpg" class="pic" onclick="openFullscreenImage(this)"></a>
+            <p>Узнай историю самой жуткой во всем мире куклы...</p>
+           
+        </div>
+
+        <div class="column">
+            <a href="page3.html" title="Узнать больше">
+            <h2>Five Nights at Freddy's</h2>
+            <img src="img/6.jpg" class="pic" onclick="openFullscreenImage(this)">  </a>
+            <p>Погрузитесь в мрачную атмосферу заброшенной пиццерии с темным прошлым.</p>
+            <p>Загляните страху прямо в глаза и раскройте все секреты этого печально известного места.</p>
+        </div>
+
+        <div class="column">
+            <a href="page4.html" title="Узнать больше">
+              <h2>The Walking Dead</h2>
+            <img src="img/7.png" class="pic" onclick="openFullscreenImage(this)"></a>
+            <p>Если не будешь бороться — умрешь...</p>
+        </div>
+
+      </div>
+
+    <div class="column-container">
+
+        <div class="column">
+          <a href="page5.html" title="Узнать больше">
+            <h2>Ограбление казино</h2>
+          <img src="img/8.jpg" class="pic" onclick="openFullscreenImage(this)"></a>
+          <p>Вы проникаете в бар, который принадлежит крупному местному мафиози</p>
+        </div>
+
+        <div class="column">
+          <a href="page6.html" title="Узнать больше">
+            <h2>Эпидемия</h2>
+          <img src="img/9.png" class="pic" onclick="openFullscreenImage(this)"></a>
+          <p>Ты нарушил режим самоизоляции и хочешь записаться на экскурсию в лабораторию по борьбе с вирусами?</p>
+        </div>
+
+        <div class="column">
+          <a href="page7.html" title="Узнать больше">
+            <h2>Форт Боярд</h2>
+          <img src="img/10.jpg" class="pic" onclick="openFullscreenImage(this)"></a>
+          <p>Добыть заветные ключи, встретить жителей форта, вырвать подсказку из пасти тигра, пожертвовав собой ради победы команды, и услышать в награду звон падающих монет</p>
+        </div>
+
+    </div>
+
+    <div id="fullscreen-container" class="hidden">
+      <span class="close-button" onclick="closeFullscreenImage()">&times;</span>
+      <img src="" alt="Полноэкранное изображение" id="fullscreen-image">
+    </div>
+
+    </section>
+
+    <section id="section3">
+
+    <form class="obratnuj-zvonok" autocomplete="off" /*action='email.php'*/ method='post'>
+        <div class="form-zvonok">
+
+          <div>
+            <label>Имя <span>*</span></label>
+            <input type='text' name='name' required></div>
+          <div>
+            <label>Номер телефона (с кодом) <span>*</span></label>
+            <input type='text' name='phone' required></div>
+          <div>
+            <label>Сообщение</label>
+            <input type='text' name='message'>
+          </div>
+
+          <div>
+            <label>Введите текст с картинки<span>*</span></label>
+            <input type='text' name='capcha' required>
+          </div>
+          <img src="img/capcha.jpg" class="pic">
+          <input class="bot-send-mail" type='submit' value='Послать заявку'>
+        </div>
+    </form>
+
+    </section>
+
+    <button id="scrollToTopButton">Вверх</button>
+
+
+</body>
+
+<footer style="width: 100%;">
+
+  <div class="social-icons">
+    <a href="https://web.telegram.org/" class="social-icon"><img src="img/tg.jpg" alt="Tg"></a>
+    <a href="https://m.vk.com/" class="social-icon"><img src="img/vk.jpg" alt="Vk"></a>
+    <a href="https://www.whatsapp.com/" class="social-icon"><img src="img/ig.jpg" alt="Ig"></a>
+  </div>
+
+</footer>
+<script>
+  let currentIndex = 0;
+  const slides = document.querySelector('.slides');
+  const totalSlides = document.querySelectorAll('.slide').length;
+
+  function showSlide(index) {
+      const slidesContainer = document.querySelector('.slides');
+      currentIndex = (index + totalSlides) % totalSlides;
+      slides.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    showSlide(currentIndex);
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    showSlide(currentIndex);
+  }
+  setInterval(nextSlide, 4000); // меняем слайд каждые 3 секунды
+</script>
+
+</html>
